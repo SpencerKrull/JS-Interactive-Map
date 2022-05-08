@@ -30,8 +30,8 @@ const myMap = {
     addMarkers() {
         for (var i = 0; i < this.businesses.length; i++) {
             this.markers = L.marker([
-                this.markers[i].lat,
-                this.markers[i].lon,
+                this.businesses[i].lat,
+                this.businesses[i].lon,
             ])
             .bindPopup(`<p1>${this.businesses[i].name}</p1>`)
             .addTo(this.map)
@@ -72,7 +72,7 @@ function processBusiness(data) {
         let location = {
             name: element.name,
             lat: element.geocodes.main.latitude,
-            lon: element.geocodes.main.longitude
+            lon: element.geocodes.main.longitude,
         };
         return location
     })
